@@ -6,7 +6,7 @@ export class UpdatePersonalDto extends CreatePersonalDto {
 
   @IsString()
   @IsOptional()
-  name: String;
+  name: string;
   
   @IsNumber()
   @IsOptional()

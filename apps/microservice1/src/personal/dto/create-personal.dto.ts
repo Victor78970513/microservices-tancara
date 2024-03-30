@@ -1,13 +1,12 @@
-import { IsNumber, IsString } from "class-validator";
-
+// import { IsNumber, IsString } from "class-validator";
 
 export class CreatePersonalDto {
-	@IsString()
+	// @IsString()
 	name: string;
 
-	@IsNumber()
+	// @IsNumber()
 	rol: number;
 
-	@IsNumber()
+	// @IsNumber()
 	prioridad: number;
 }
