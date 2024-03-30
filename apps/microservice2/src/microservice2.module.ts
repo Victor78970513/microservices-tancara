@@ -12,10 +12,8 @@ import { Task } from './tasks/task.entity';
       host: 'localhost',
       port: 3306,
       username: 'root',
-      password: '',
+      password: '1234',
       database: 'tasks_db',
-      // entities: [__dirname + '/**/*.entity{.ts,.js}'],
-      // entities: [__dirname + '/tasks/**/*.entity{.ts,.js}'],
       entities: [Task],
       synchronize: true
     }),
