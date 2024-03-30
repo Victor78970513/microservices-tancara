@@ -1,3 +1,3 @@
-import { CreatePrioridadDto } from './create-prioridad.dto';
+import { CreatePrioridadDto } from "./create-prioridad.dto";
 
-export class UpdatePrioridadDto extends CreatePrioridadDto {}
+export class UpdatePrioridadDto extends  CreatePrioridadDto {}
