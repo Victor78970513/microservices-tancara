@@ -14,21 +14,7 @@ export class PersonalController {
 
 	@Get()
 	findAll() {
-		return this.personalService.findAll();
+		return this.personalService.getPersonal();
 	}
 
-	@Get(':id')
-	findOne(@Param('id') id: string) {
-		return this.personalService.findOne(+id);
-	}
-
-	@Patch(':id')
-	update(@Param('id') id: string, @Body() updatePersonalDto: UpdatePersonalDto) {
-		return this.personalService.update(+id, updatePersonalDto);
-	}
-
-	@Delete(':id')
-	remove(@Param('id') id: string) {
-		return this.personalService.remove(+id);
-	}
 }

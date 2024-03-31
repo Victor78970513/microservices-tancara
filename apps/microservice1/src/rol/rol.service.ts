@@ -8,17 +8,17 @@ import { InjectRepository } from '@nestjs/typeorm';
 @Injectable()
 export class RolService {
 
-  constructor(
-    @InjectRepository(Rol)
-    private rolRepository: Repository<Rol>
-  ) {}
+	constructor(
+		@InjectRepository(Rol)
+		private rolRepository: Repository<Rol>
+	) { }
 
-  async createRoles( roles: CreateRolDto[]) {
+	async createRoles(roles: CreateRolDto[]) {
+		const newRol = await this.rolRepository.create(roles)
+		return this.rolRepository.save(newRol)
+	}
 
-    for (let i = 0; i < roles.length; i++) {
-      const newRol = await this.rolRepository.create(roles[i])
-      await this.rolRepository.save( newRol )
-    }
-  
-  }
+	getRoles(): Promise<Rol[]> {
+		return this.rolRepository.find();
+	}
 }

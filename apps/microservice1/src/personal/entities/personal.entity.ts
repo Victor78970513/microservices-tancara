@@ -4,7 +4,6 @@ import { Prioridad } from '../../prioridad/entities/prioridad.entity';
 
 @Entity()
 export class Personal {
-
   @PrimaryGeneratedColumn()
   id: number;
 
