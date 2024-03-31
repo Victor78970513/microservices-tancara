@@ -1,26 +1,23 @@
 import { Injectable } from '@nestjs/common';
 import { CreatePrioridadDto } from './dto/create-prioridad.dto';
-import { UpdatePrioridadDto } from './dto/update-prioridad.dto';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Prioridad } from './entities/prioridad.entity';
+import { Repository } from 'typeorm';
 
 @Injectable()
 export class PrioridadService {
-  create(createPrioridadDto: CreatePrioridadDto) {
-    return 'This action adds a new prioridad';
-  }
 
-  findAll() {
-    return `This action returns all prioridad`;
-  }
+	constructor(
+		@InjectRepository(Prioridad)
+		private prioridadRepository: Repository<Prioridad>
+	) { }
 
-  findOne(id: number) {
-    return `This action returns a #${id} prioridad`;
-  }
+	async createPrioridades(prioridaes: CreatePrioridadDto[]) {
+		const newPriority = await this.prioridadRepository.create(prioridaes);
+		return this.prioridadRepository.save(newPriority)
+	}
 
-  update(id: number, updatePrioridadDto: UpdatePrioridadDto) {
-    return `This action updates a #${id} prioridad`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} prioridad`;
-  }
+	getPrioridades(): Promise<Prioridad[]> {
+		return this.prioridadRepository.find();
+	}
 }

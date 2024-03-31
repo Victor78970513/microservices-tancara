@@ -2,12 +2,12 @@ import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm'
 
 @Entity()
 export class Rol {
-  
 
-  @PrimaryGeneratedColumn()
-  id: number
 
-  @Column()
-  rol: string
-  
+	@PrimaryGeneratedColumn()
+	id: number
+
+	@Column({ unique: true })
+	rol: string
+
 }
