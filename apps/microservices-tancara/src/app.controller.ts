@@ -9,4 +9,9 @@ export class AppController {
   newTask(@Body() body:any):string{
     return this.appService.newTask(body);
   }
+
+  @Get('/tasks')
+  getTasks(){
+    return this.appService.getTasks();
+  }
 }

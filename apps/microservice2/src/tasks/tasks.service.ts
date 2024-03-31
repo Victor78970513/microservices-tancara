@@ -17,5 +17,9 @@ export class TasksService {
         return this.taskRepository.save(newTask)
     }
 
+    getAllTasks(){
+        return this.taskRepository.find()
+    }
+
 
 }
