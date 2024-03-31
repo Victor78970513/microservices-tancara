@@ -9,6 +9,10 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
       {
         name: "TASKS_SERVICE",
         transport: Transport.TCP,
+      },
+      {
+        name: "PERSONAL_SERVICE",
+        transport: Transport.TCP,
       }
     ])
   ],
