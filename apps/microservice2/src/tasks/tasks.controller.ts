@@ -13,7 +13,11 @@ export class TasksController {
     @EventPattern('new_task')
     createTask(@Body() newTask: CreateTaskDto){
         return this.tasksService.createTask(newTask)
-        // console.log('llamando al evento task', newTask)
+    }
+
+    @EventPattern('get_tasks')
+    getAllTasks(){
+        return this.tasksService.getAllTasks()
     }
 
 }
