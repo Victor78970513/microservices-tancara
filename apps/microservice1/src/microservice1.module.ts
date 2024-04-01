@@ -10,7 +10,6 @@ import { Rol } from './rol/entities/rol.entity';
 import { Prioridad } from './prioridad/entities/prioridad.entity';
 
 @Module({
-<<<<<<< HEAD
   imports: [
     TypeOrmModule.forRoot({
       type: 'mariadb',
@@ -21,31 +20,12 @@ import { Prioridad } from './prioridad/entities/prioridad.entity';
       database: 'nest_personal',
       entities: [ Personal, Rol, Prioridad ],
       synchronize: true,
-    }), 
+    }),
     PersonalModule,
     RolModule,
-    PrioridadModule
+    PrioridadModule,
   ],
   controllers: [Microservice1Controller],
   providers: [Microservice1Service],
-=======
-	imports: [
-		TypeOrmModule.forRoot({
-			type: 'mariadb',
-			host: 'localhost',
-			port: 3306,
-			username: 'root',
-			password: '1234',
-			database: 'personal_db',
-			entities: [Personal, Rol, Prioridad],
-			synchronize: true,
-		}),
-		PersonalModule,
-		RolModule,
-		PrioridadModule
-	],
-	controllers: [Microservice1Controller],
-	providers: [Microservice1Service],
->>>>>>> origin
 })
-export class Microservice1Module { }
+export class Microservice1Module {}
