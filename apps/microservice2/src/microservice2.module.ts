@@ -5,9 +5,8 @@ import { Task } from './tasks/task.entity';
 import { ConfigModule } from '@nestjs/config';
 
 @Module({
-
-    ConfigModule.forRoot(),
   imports: [
+    ConfigModule.forRoot(),
     TypeOrmModule.forRoot({
       type: 'mariadb',
       host: 'localhost',
