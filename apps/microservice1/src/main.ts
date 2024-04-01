@@ -3,11 +3,6 @@ import { Microservice1Module } from './microservice1.module';
 import { MicroserviceOptions, Transport } from '@nestjs/microservices';
 
 async function bootstrap() {
-<<<<<<< HEAD
-	const app = await NestFactory.create(Microservice1Module);
-	app.enableCors();
-	await app.listen(3002);
-=======
 	const app = await NestFactory.createMicroservice<MicroserviceOptions>(
 		Microservice1Module,
 		{
@@ -19,6 +14,5 @@ async function bootstrap() {
 		}
 	)
 	await app.listen();
->>>>>>> origin
 }
 bootstrap();
