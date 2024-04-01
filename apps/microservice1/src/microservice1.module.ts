@@ -9,14 +9,16 @@ import { Personal } from './personal/entities/personal.entity';
 import { Rol } from './rol/entities/rol.entity';
 import { Prioridad } from './prioridad/entities/prioridad.entity';
 
+import { ConfigModule } from '@nestjs/config';
 @Module({
   imports: [
+    ConfigModule.forRoot(),
     TypeOrmModule.forRoot({
       type: 'mariadb',
       host: 'localhost',
       port: 3306,
-      username: 'root',
-      password: 'leverna2003',
+      username: process.env.DATABASE_USER,
+      password: process.env.DATABASE_PASSWORD ,
       database: 'nest_personal',
       entities: [ Personal, Rol, Prioridad ],
       synchronize: true,
