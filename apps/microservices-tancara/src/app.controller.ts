@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, ParseIntPipe, Post } from '@nestjs/common';
 import { AppService } from './app.service';
 import { CreatePersonalDto } from 'apps/microservice1/src/personal/dto/create-personal.dto';
 
@@ -28,5 +28,12 @@ export class AppController {
   getPersonal(){
     return this.appService.getPersonal();
   }
+
+  // ESTO ES DEL MICROSERVICIO PERSONAL
+  @Delete('/personal/:id')
+  deletePersonal(@Param('id', ParseIntPipe) id: number){
+    return this.appService.deletePersonal(id);
+  }
+
 
 }

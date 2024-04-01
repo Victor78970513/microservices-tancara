@@ -22,7 +22,7 @@ export class PersonalController {
   
   // Delete
 	@EventPattern('delete_user')
-	findAll() {
-		return this.personalService.deleteUser();
+	deletePersonal(id: number) {
+		return this.personalService.deletePersonal(id);
 	}
 }

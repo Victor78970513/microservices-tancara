@@ -47,4 +47,12 @@ export class AppService {
   return personal;
   }
 
+  async deletePersonal(id: number){
+  // this.clientTask.emit('get_tasks','positivo')
+  // return 'posi'
+
+  const personal = await this.clientPersonal.send('delete_user', id).toPromise();
+  return personal;
+  }
+
 }
