@@ -13,6 +13,7 @@ export class PersonalService {
 	) { }
 	create(createPersonalDto: CreatePersonalDto) {
 		const newUser = this.personalRepository.create(createPersonalDto);
+    console.log(newUser)
 		return this.personalRepository.save(newUser);
 	}
 

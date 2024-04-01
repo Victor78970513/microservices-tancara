@@ -11,11 +11,11 @@ export class Personal {
   name: string;
 
   @OneToOne(() => Rol)
-  @JoinColumn()
+  @JoinColumn({name: 'rol'})
   id_rol: Rol;
 
   @OneToOne(() => Prioridad)
-  @JoinColumn()
+  @JoinColumn({ name: 'prioridad'})
   id_prioridad: Prioridad;
 
 }
