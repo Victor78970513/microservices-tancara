@@ -8,11 +8,16 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
     ClientsModule.register([
       {
         name: "TASKS_SERVICE",
-        transport: Transport.TCP,
+        transport: Transport.TCP,options:{
+          port: 3002
+        }
       },
       {
         name: "PERSONAL_SERVICE",
         transport: Transport.TCP,
+        options:{
+          port: 3003
+        }
       }
     ])
   ],

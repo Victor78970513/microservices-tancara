@@ -15,12 +15,16 @@ export class AppService {
     this.clientTask.emit('new_task',task)
     return task
   }
-  getTasks(){
-    // this.clientTask.emit('get_tasks','positivo')
-    // return 'posi'
-
-    const tasks = this.clientTask.send('get_tasks','posi?').toPromise();
-    return tasks;
+  async getTasks(){
+    // const tasks = this.clientTask.send('get_tasks','posi?');
+    // return tasks;
+    try {
+      const tasks=await this.clientTask.send('get_tasks','traer datos').toPromise();
+      return tasks;
+    } catch (error) {
+      console.log('Error fetching tasks: ',error);
+      throw error;
+    }
   }
 
 

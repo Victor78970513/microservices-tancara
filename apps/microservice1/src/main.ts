@@ -7,8 +7,12 @@ async function bootstrap() {
 		Microservice1Module,
 		{
 			transport: Transport.TCP,
+			options: {
+				host: 'localhost',
+				port: 3003
+			}
 		}
 	)
-	await app.listen()
+	await app.listen();
 }
 bootstrap();

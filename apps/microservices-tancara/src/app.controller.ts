@@ -7,7 +7,7 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   // ESTO ES DEL MICROSERVICIO TASKS
-  @Post('create-task')
+  @Post('/create-task')
   newTask(@Body() body:any):string{
     return this.appService.newTask(body);
   }

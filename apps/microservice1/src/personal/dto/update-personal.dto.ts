@@ -1,18 +1,18 @@
-import { IsOptional, IsNumber, IsString } from 'class-validator';
+// import { IsOptional, IsNumber, IsString } from 'class-validator';
 import { CreatePersonalDto } from './create-personal.dto';
 
 
 export class UpdatePersonalDto extends CreatePersonalDto {
 
-	@IsString()
-	@IsOptional()
+	// @IsString()
+	// @IsOptional()
 	name: string;
 
-	@IsNumber()
-	@IsOptional()
+	// @IsNumber()
+	// @IsOptional()
 	rol: number;
 
-	@IsNumber()
-	@IsOptional()
+	// @IsNumber()
+	// @IsOptional()
 	prioridad: number;
 }
