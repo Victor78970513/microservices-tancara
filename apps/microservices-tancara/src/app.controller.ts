@@ -22,4 +22,11 @@ export class AppController {
   newUser(@Body() body:CreatePersonalDto){
     return this.appService.createUser(body)
   }
+
+  // ESTO ES DEL MICROSERVICIO PERSONAL
+  @Get('/personal')
+  getPersonal(){
+    return this.appService.getPersonal();
+  }
+
 }

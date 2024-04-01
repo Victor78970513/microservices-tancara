@@ -19,5 +19,10 @@ export class PersonalController {
 	findAll() {
 		return this.personalService.getPersonal();
 	}
-
+  
+  // Delete
+	@EventPattern('delete_user')
+	findAll() {
+		return this.personalService.deleteUser();
+	}
 }

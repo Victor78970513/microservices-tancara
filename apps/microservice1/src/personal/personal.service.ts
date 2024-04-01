@@ -20,5 +20,8 @@ export class PersonalService {
 		return this.personalRepository.find();
 	}
 
+	deletePersonal(): Promise<Personal[]> {
+		// return this.personalRepository.deletePersonal();
+	}
 
 }

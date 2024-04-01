@@ -30,8 +30,21 @@ export class AppService {
 
   // ESTO ES DEL MICROSERVICIO DE PERSONAL
   createUser(user:CreatePersonalDto){
-    this.clientPersonal.emit('create_user',user)
-    return user
+    try { 
+      this.clientPersonal.emit('create_user',user)
+      return user
+    } catch (error) {
+      console.log('Error fetching tasks: ',error);
+      throw error;
+    }
+  }
+
+  async getPersonal(){
+  // this.clientTask.emit('get_tasks','positivo')
+  // return 'posi'
+
+  const personal = await this.clientPersonal.send('get_users','posi?').toPromise();
+  return personal;
   }
 
 }

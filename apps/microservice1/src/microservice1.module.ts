@@ -10,6 +10,7 @@ import { Rol } from './rol/entities/rol.entity';
 import { Prioridad } from './prioridad/entities/prioridad.entity';
 
 import { ConfigModule } from '@nestjs/config';
+
 @Module({
   imports: [
     ConfigModule.forRoot(),
@@ -18,8 +19,8 @@ import { ConfigModule } from '@nestjs/config';
       host: 'localhost',
       port: 3306,
       username: process.env.DATABASE_USER,
-      password: process.env.DATABASE_PASSWORD ,
-      database: 'nest_personal',
+      password: process.env.DATABASE_PASSWORD,
+      database: 'personal_db',
       entities: [ Personal, Rol, Prioridad ],
       synchronize: true,
     }),
