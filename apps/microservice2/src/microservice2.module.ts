@@ -9,7 +9,7 @@ import { Task } from './tasks/task.entity';
       type: 'mariadb',
       host: 'localhost',
       port: 3306,
-      username: 'root',
+      username: 'chesco',
       password: '1234',
       database: 'tasks_db',
       entities: [Task],
